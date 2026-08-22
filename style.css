@@ -1,0 +1,360 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        #f3f6fa;
+
+    color:
+        #1f2937;
+}
+
+
+.container {
+
+    width: 92%;
+
+    max-width: 1100px;
+
+    margin: 30px auto 60px;
+
+}
+
+
+/* HEADER */
+
+header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.logo {
+
+    font-size: 45px;
+
+}
+
+
+h1 {
+
+    margin: 0;
+
+    font-size: 32px;
+
+}
+
+
+header p {
+
+    margin-top: 5px;
+
+    color: #64748b;
+
+}
+
+
+/* CARD */
+
+.card {
+
+    background: white;
+
+    padding: 25px;
+
+    margin-bottom: 20px;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 4px 15px
+        rgba(0,0,0,0.07);
+
+}
+
+
+.card h2 {
+
+    margin-top: 0;
+
+}
+
+
+/* INPUTS */
+
+label {
+
+    display: block;
+
+    margin-top: 15px;
+
+    margin-bottom: 6px;
+
+    font-weight: bold;
+
+}
+
+
+input,
+select {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border:
+        1px solid #d1d5db;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+}
+
+
+/* BUTTON */
+
+button {
+
+    border: none;
+
+    border-radius: 8px;
+
+    padding: 13px 20px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+}
+
+
+.analyze {
+
+    width: 100%;
+
+    background: #111827;
+
+    color: white;
+
+    font-size: 17px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.secondary {
+
+    background: #e5e7eb;
+
+    color: #111827;
+
+}
+
+
+/* LOADING */
+
+.loading {
+
+    display: none;
+
+    text-align: center;
+
+    font-weight: bold;
+
+    padding: 20px;
+
+}
+
+
+/* RECORD COUNT */
+
+.record-count {
+
+    margin-top: 15px;
+
+    padding: 12px;
+
+    background: #f1f5f9;
+
+    border-radius: 8px;
+
+}
+
+
+/* VULNERABILITY */
+
+.vulnerability-card {
+
+    display: grid;
+
+    grid-template-columns:
+        55px
+        1fr
+        150px;
+
+    gap: 15px;
+
+    padding: 20px;
+
+    margin-top: 15px;
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+}
+
+
+.rank {
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+}
+
+
+.vulnerability-info h3 {
+
+    margin-top: 0;
+
+}
+
+
+.vulnerability-info p {
+
+    margin: 6px 0;
+
+    color: #64748b;
+
+}
+
+
+.score {
+
+    text-align: center;
+
+}
+
+
+.score span {
+
+    display: block;
+
+    font-size: 12px;
+
+    color: #64748b;
+
+}
+
+
+.score strong {
+
+    display: block;
+
+    font-size: 30px;
+
+}
+
+
+.score small {
+
+    font-weight: bold;
+
+}
+
+
+/* METRICS */
+
+.metrics {
+
+    grid-column: 2 / 4;
+
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.metrics span {
+
+    padding: 7px 10px;
+
+    background: #f1f5f9;
+
+    border-radius: 6px;
+
+    font-size: 13px;
+
+}
+
+
+/* AI */
+
+.ai-analysis {
+
+    line-height: 1.7;
+
+    background: #f8fafc;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+}
+
+
+/* HIDDEN */
+
+.hidden {
+
+    display: none;
+
+}
+
+
+@media(max-width:700px) {
+
+    .vulnerability-card {
+
+        grid-template-columns:
+            40px 1fr;
+
+    }
+
+    .score {
+
+        grid-column: 2;
+
+    }
+
+    .metrics {
+
+        grid-column: 1 / 3;
+
+    }
+
+}
