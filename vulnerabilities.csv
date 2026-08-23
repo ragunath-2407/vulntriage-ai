@@ -1,7 +1,0 @@
-id,title,technology,version,asset,exposure,service_importance,cvss,kev,epss
-VULN-001,Remote Code Execution,Apache,2.4.49,Public Web Server,Internet,5,9.8,Yes,0.97
-VULN-002,SQL Injection,FastAPI,0.95,Login API,Internet,5,9.1,No,0.82
-VULN-003,Privilege Escalation,Ubuntu,22.04,Internal Server,Internal,4,7.8,No,0.45
-VULN-004,Cross Site Scripting,React,18,Customer Portal,Internet,3,6.1,No,0.31
-VULN-005,Authentication Bypass,Apache,2.4.50,Admin Portal,Internet,5,9.8,Yes,0.91
-VULN-006,Information Disclosure,Nginx,1.18,Internal API,Internal,2,5.3,No,0.12
