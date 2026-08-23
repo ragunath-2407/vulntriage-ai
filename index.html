@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>VulnTriage AI</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+
+<body>
+
+    <!-- Background decoration -->
+
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+
+    <!-- MAIN CONTAINER -->
+
+    <main class="container">
+
+
+        <!-- HEADER -->
+
+        <header class="hero">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    🛡️
+                </div>
+
+                <div>
+
+                    <h1>
+                        VulnTriage <span>AI</span>
+                    </h1>
+
+                    <p>
+                        Personalized Vulnerability Prioritization
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="status">
+
+                <span class="status-dot"></span>
+
+                AI Security Engine
+
+            </div>
+
+        </header>
+
+
+        <!-- INTRO -->
+
+        <section class="intro-card">
+
+            <div>
+
+                <p class="eyebrow">
+                    CYBERSECURITY INTELLIGENCE
+                </p>
+
+                <h2>
+                    Turn hundreds of vulnerabilities
+                    into your <span>Top 5 priorities.</span>
+                </h2>
+
+                <p class="intro-text">
+                    VulnTriage AI evaluates CVSS, EPSS, KEV,
+                    exposure, technology and business importance
+                    to identify the vulnerabilities that matter most.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ORGANISATION -->
+
+        <section class="card">
+
+            <div class="section-heading">
+
+                <div class="section-number">
+                    01
+                </div>
+
+                <div>
+
+                    <h2>
+                        Organisation Profile
+                    </h2>
+
+                    <p>
+                        Tell us about your environment
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-grid">
+
+                <div class="input-group">
+
+                    <label>
+                        Organisation Name
+                    </label>
+
+                    <input
+                        id="organizationName"
+                        type="text"
+                        placeholder="e.g. ABC Technologies"
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        Primary Technology
+                    </label>
+
+                    <input
+                        id="organizationTechnology"
+                        type="text"
+                        placeholder="e.g. Python / FastAPI"
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        Technology Version
+                    </label>
+
+                    <input
+                        id="organizationVersion"
+                        type="text"
+                        placeholder="e.g. 3.12"
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        Exposure
+                    </label>
+
+                    <select id="organizationExposure">
+
+                        <option value="Internet">
+                            Internet
+                        </option>
+
+                        <option value="External">
+                            External
+                        </option>
+
+                        <option value="Internal">
+                            Internal
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- VULNERABILITY DATA -->
+
+        <section class="card">
+
+            <div class="section-heading">
+
+                <div class="section-number">
+                    02
+                </div>
+
+                <div>
+
+                    <h2>
+                        Vulnerability Records
+                    </h2>
+
+                    <p>
+                        Upload your vulnerability dataset
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="upload-area">
+
+                <div class="upload-icon">
+                    📄
+                </div>
+
+                <div>
+
+                    <h3>
+                        Upload CSV
+                    </h3>
+
+                    <p>
+                        Upload vulnerability records
+                        containing CVSS, EPSS, KEV and exposure.
+                    </p>
+
+                </div>
+
+
+                <label class="upload-button">
+
+                    Choose File
+
+                    <input
+                        type="file"
+                        id="csvFile"
+                        accept=".csv"
+                        hidden
+                    >
+
+                </label>
+
+            </div>
+
+
+            <div
+                id="recordCount"
+                class="record-count"
+            >
+                No vulnerability records loaded
+            </div>
+
+
+            <button
+                class="demo-button"
+                onclick="loadDemoData()"
+            >
+
+                ✨ Load Demo Vulnerabilities
+
+            </button>
+
+        </section>
+
+
+        <!-- ANALYZE -->
+
+        <section class="action-section">
+
+            <button
+                class="analyze-button"
+                onclick="runTriage()"
+            >
+
+                <span>
+                    🔍
+                </span>
+
+                Analyze & Find Top 5 Priorities
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </button>
+
+
+            <div
+                id="loading"
+                class="loading hidden"
+            >
+
+                <div class="spinner"></div>
+
+                <span>
+                    Calculating vulnerability priorities...
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- TOP 5 -->
+
+        <section
+            id="prioritySection"
+            class="results-section hidden"
+        >
+
+            <div class="results-header">
+
+                <div>
+
+                    <p class="eyebrow">
+                        SECURITY PRIORITIES
+                    </p>
+
+                    <h2>
+                        🚨 Top 5 Vulnerabilities
+                    </h2>
+
+                    <p>
+                        Highest-risk vulnerabilities based on
+                        your organisation's context.
+                    </p>
+
+                </div>
+
+                <div class="top5-badge">
+                    TOP 5
+                </div>
+
+            </div>
+
+
+            <div id="priorityCards"></div>
+
+        </section>
+
+
+        <!-- AI ANALYSIS -->
+
+        <section
+            id="aiSection"
+            class="ai-section hidden"
+        >
+
+            <div class="ai-header">
+
+                <div class="ai-icon">
+                    🤖
+                </div>
+
+                <div>
+
+                    <p class="eyebrow">
+                        FEATHERLESS AI
+                    </p>
+
+                    <h2>
+                        AI Security Analysis
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="aiAnalysis"
+                class="ai-analysis"
+            >
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            <div>
+                🛡️ VulnTriage AI
+            </div>
+
+            <span>
+                Defensive Security Intelligence
+            </span>
+
+        </footer>
+
+
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
